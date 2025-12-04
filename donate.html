@@ -1,1 +1,61 @@
-<a href="https://crm.bloomerang.co/HostedDonation?ApiKey=pub_931a4655-5734-11ee-ae4c-02632d70d7e3&WidgetId=8458240" target="_blank">Donate Now</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - Seed Bloom Charity</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:0; margin:0; background:#f9f9f9; }
+    nav { background:#4CAF50; padding:10px; text-align:center; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    section { max-width:800px; margin:40px auto; padding:40px 20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align:center; }
+    footer { text-align:center; padding:20px; background:#eee; margin-top:20px; }
+  </style>
+  <!-- jQuery for Bloomerang script -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+
+  <section>
+    <h1>Support Seed Bloom Charity</h1>
+    <p>Your generous gift helps us continue our programs and support Jewish life in Voronezh, Russia.</p>
+
+    <!-- Bloomerang donation widget -->
+    <script type="text/javascript" id="bloomerangForm8458240"></script>
+    <script type="text/javascript">
+        // Your full Bloomerang script here
+        // Make sure this is AFTER jQuery is loaded
+        var insertForm8458240 = function() { 
+            // ... your full script ... 
+        };
+        var startBloomerangLoad = function() {
+            if (window.bloomerangLoadStarted == undefined) {
+                window.bloomerangLoadStarted = true;
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                document.getElementsByTagName('head')[0].appendChild(script);
+                waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm8458240(); })});
+            } else {
+                waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm8458240(); })});
+            }
+        };
+        var waitForBloomerangLoad = function(callback) {
+            if (typeof(Bloomerang) === 'undefined' || !Bloomerang._isReady) {
+                setTimeout(function () { waitForBloomerangLoad(callback) }, 500);
+            } else { callback(); }
+        };
+        startBloomerangLoad();
+    </script>
+  </section>
+
+  <footer>
+    &copy; 2025 Seed Bloom Charity
+  </footer>
+</body>
+</html>
