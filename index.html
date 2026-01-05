@@ -7,21 +7,28 @@
   <style>
     /* Reset & basic styles */
     body { margin:0; padding:0; font-family: Arial, sans-serif; background:#f9f9f9; color:#333; }
-    nav { background:#4CAF50; padding:15px; text-align:center; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+
+    /* Navigation bar */
+    nav { 
+      background:#4CAF50; 
+      padding:10px 20px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      flex-wrap:wrap;
+    }
+    nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; font-size:16px; }
     nav a:hover { text-decoration:underline; }
 
-    /* Header */
-    header { position:relative; text-align:center; }
-    header img { width:100%; height:auto; object-fit:cover; display:block; }
-    header h1 { 
-      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); 
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      font-size:36px; color:white; text-shadow:2px 2px 5px rgba(0,0,0,0.6);
-      margin:0;
+    /* Logo in navbar */
+    .nav-logo {
+      display:flex; 
+      align-items:center; 
+      gap:8px; 
+      color:white; 
+      font-size:18px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
-
-    /* Seed Bloom logo styling */
     .seed-container { display:inline-block; position:relative; width:20px; height:30px; }
     .seed { width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:translateX(-50%); animation:grow 2s infinite alternate; }
     .drop { width:4px; height:4px; background:#2196F3; border-radius:50%; position:absolute; top:-10px; left:50%; transform:translateX(-50%); animation:drop 1s infinite alternate; }
@@ -29,10 +36,9 @@
     @keyframes grow { 0% { height:8px; } 50% { height:20px; } 100% { height:15px; } }
     @keyframes drop { 0% { top:-10px; opacity:1; } 100% { top:0; opacity:0; } }
 
-    /* Bloom animation */
     .bloom-word { 
       font-family: "Brush Script MT", cursive; 
-      font-size:44px; 
+      font-size:24px; 
       color:#2f7d32; 
       display:inline-block;
       animation: bloomGrow 3s ease-in-out infinite alternate;
@@ -42,6 +48,10 @@
       50% { transform: scale(1.05) rotate(1deg); }
       100% { transform: scale(1) rotate(0deg); }
     }
+
+    /* Header image */
+    header { text-align:center; margin-top:0; }
+    header img { width:100%; height:auto; object-fit:cover; display:block; }
 
     /* Sections */
     section { max-width:900px; margin:40px auto; padding:0 20px; }
@@ -53,30 +63,37 @@
     .gallery { display:flex; flex-wrap:wrap; gap:15px; margin-top:30px; justify-content:center; }
     .gallery img { width:100%; max-width:300px; border-radius:8px; object-fit:cover; }
 
+    /* Responsive */
     @media(max-width:600px) {
-      header h1 { font-size:28px; flex-direction:column; gap:5px; }
-      .gallery img { max-width:100%; }
-      nav a { display:block; margin:10px 0; }
+      nav { flex-direction:column; align-items:flex-start; }
+      nav a { margin:5px 0; }
+      .bloom-word { font-size:20px; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="donate.html">Donate</a>
-  </nav>
 
-  <header>
-    <img src="images/0O3A8994.jpg" alt="Seed Bloom Charity">
-    <h1>
+  <!-- Navigation with animated logo -->
+  <nav>
+    <div class="nav-logo">
       <div class="seed-container">
         <div class="drop"></div>
         <div class="seed"></div>
       </div>
       Seed <span class="bloom-word">Bloom</span> Charity
-    </h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+  <!-- Header image (below nav) -->
+  <header>
+    <img src="images/0O3A8994.jpg" alt="Seed Bloom Charity">
   </header>
 
+  <!-- Main content -->
   <section>
     <h2>Who We Are</h2>
     <p>Seed Bloom Charity is dedicated to supporting Jewish life in Voronezh. We help nurture hidden Jewish roots—especially those buried under generations of silence and erasure—like seeds never watered. We provide warmth, guidance, and nourishment so they can grow, thrive, and proudly blossom. We strive to make a lasting impact through education, cultural programs, and direct support for families and individuals in need.</p>
