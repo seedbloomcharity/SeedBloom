@@ -44,4 +44,58 @@
     }
 
     /* Sections */
-    section
+    section { max-width:900px; margin:40px auto; padding:0 20px; }
+    h2 { color:#4CAF50; margin-top:40px; }
+    p { line-height:1.6; }
+    .btn { display:inline-block; padding:12px 25px; background:#4CAF50; color:white; text-decoration:none; border-radius:5px; margin-top:20px; }
+
+    /* Gallery */
+    .gallery { display:flex; flex-wrap:wrap; gap:15px; margin-top:30px; justify-content:center; }
+    .gallery img { width:100%; max-width:300px; border-radius:8px; object-fit:cover; }
+
+    @media(max-width:600px) {
+      header h1 { font-size:28px; flex-direction:column; gap:5px; }
+      .gallery img { max-width:100%; }
+      nav a { display:block; margin:10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+
+  <header>
+    <img src="images/0O3A8994.jpg" alt="Seed Bloom Charity">
+    <h1>
+      <div class="seed-container">
+        <div class="drop"></div>
+        <div class="seed"></div>
+      </div>
+      Seed <span class="bloom-word">Bloom</span> Charity
+    </h1>
+  </header>
+
+  <section>
+    <h2>Who We Are</h2>
+    <p>Seed Bloom Charity is dedicated to supporting Jewish life in Voronezh. We help nurture hidden Jewish roots—especially those buried under generations of silence and erasure—like seeds never watered. We provide warmth, guidance, and nourishment so they can grow, thrive, and proudly blossom. We strive to make a lasting impact through education, cultural programs, and direct support for families and individuals in need.</p>
+
+    <h2>Our Mission</h2>
+    <p>We believe that every act of kindness can grow into something bigger. Our mission is to nurture and strengthen Jewish life by providing resources, opportunities, and a sense of belonging for everyone.</p>
+
+    <a href="donate.html" class="btn">Support Our Work</a>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="images/WhatsApp Image 2024-11-13 at 20.42.41_e46316f3.jpg" alt="Community Photo 1">
+      <img src="images/gleb2.png" alt="Community Photo 2">
+      <img src="images/students12.jpg" alt="Community Photo 3">
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:20px; background:#eee; margin-top:40px;">
+    &copy; 2025 Seed Bloom Charity
+  </footer>
+</body>
+</html>
