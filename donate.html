@@ -20,7 +20,15 @@
 
     /* Mobile fix */
     box-sizing: border-box;
-    width: 100%; }
+}
+
+/* Optional: adjust padding for very small screens */
+@media (max-width: 480px) {
+    section {
+        padding: 30px 15px;
+    }
+}
+
     h1 { text-align:center; color:#4CAF50; margin-bottom:20px; }
     footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
     .info { margin-bottom:30px; }
