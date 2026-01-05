@@ -9,7 +9,18 @@
     nav { background:#4CAF50; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
     nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
     nav a:hover { text-decoration:underline; }
-    section { max-width:800px; margin:40px auto; padding:40px 20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); line-height:1.6; }
+    section { 
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+
+    /* Mobile fix */
+    box-sizing: border-box;
+    width: 100%; }
     h1 { text-align:center; color:#4CAF50; margin-bottom:20px; }
     footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
     .info { margin-bottom:30px; }
