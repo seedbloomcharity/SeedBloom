@@ -42,28 +42,22 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       line-height: 1.6;
       box-sizing: border-box;
+      text-align: center; /* force all content centered */
     }
 
-    /* Mobile padding adjustment */
     @media (max-width: 480px) {
       section {
           padding: 30px 15px;
       }
     }
 
-    /* Center donation widget inside section */
-    .donation-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin: 20px auto;
-    }
-
+    /* Force iframe/form donation widgets to center */
     .donation-container iframe,
     .donation-container form {
-      width: 100%;
-      max-width: 500px;
       display: block;
+      margin: 0 auto; /* center horizontally */
+      max-width: 500px;
+      width: 100%;
     }
 
     h1 { 
@@ -83,7 +77,6 @@
       margin-bottom:30px; 
     }
 
-    /* Logo animations */
     .seed-container { 
       display:inline-block; 
       position:relative; 
@@ -126,12 +119,10 @@
       100% { top:0; opacity:0; } 
     }
   </style>
-  <!-- jQuery for Bloomerang -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
-<!-- Top navigation with logo -->
 <nav>
   <div style="display:flex; align-items:center; gap:8px;">
     <div class="seed-container">
@@ -147,20 +138,18 @@
   </div>
 </nav>
 
-<!-- Info section -->
 <section class="info">
   <p><strong>Your gift helps Jewish life flourish.</strong> Every donation is a drop of water for those who have never experienced it, helping roots grow, thrive, and bloom.</p>
   <p><strong>Seed Bloom Charity</strong> nurtures hidden Jewish identity, giving new life to a community ready to blossom.</p>
   <p>Thank you for helping Jewish life take root and flourish.</p>
 
-  <!-- Bloomerang donation widget -->
+  <!-- Centered Bloomerang widget -->
   <div class="donation-container">
-    <!-- Paste your Bloomerang embed code below -->
-    <!-- Example: -->
+    <!-- Replace below with your Bloomerang embed code -->
+    <!-- Example iframe -->
     <!-- <iframe src="YOUR_BLOOMERANG_EMBED_URL" frameborder="0" scrolling="no"></iframe> -->
   </div>
 </section>
-
 
 
 <!-- Bloomerang donation widget starts below -->
