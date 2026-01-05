@@ -6,7 +6,7 @@
   <title>Donate - Seed Bloom Charity</title>
   <style>
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
-    nav { background:#4CAF50; padding:15px; }
+    nav { background:#4CAF50; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
     nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
     nav a:hover { text-decoration:underline; }
     section { max-width:800px; margin:40px auto; padding:40px 20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); line-height:1.6; }
@@ -15,8 +15,40 @@
     .info { margin-bottom:30px; }
     /* Logo animations */
     .seed-container { display:inline-block; position:relative; width:20px; height:30px; }
-    .seed { width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:transl
+    .seed { width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:translateX(-50%); animation:grow 2s infinite alternate; }
+    .drop { width:4px; height:4px; background:#2196F3; border-radius:50%; position:absolute; top:-10px; left:50%; transform:translateX(-50%); animation:drop 1s infinite alternate; }
+    @keyframes grow { 0% { height:8px; } 50% { height:20px; } 100% { height:15px; } }
+    @keyframes drop { 0% { top:-10px; opacity:1; } 100% { top:0; opacity:0; } }
+  </style>
+  <!-- jQuery for Bloomerang -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
 
+<!-- Top navigation with logo -->
+<nav>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <div class="seed-container">
+      <div class="drop"></div>
+      <div class="seed"></div>
+    </div>
+    <span style="color:white; font-family:'Brush Script MT', cursive; font-size:24px;">Seed Bloom</span>
+    <span style="color:white; font-family:Times New Roman, serif; font-size:16px; text-transform:uppercase; margin-left:4px;">Charity</span>
+  </div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</nav>
+
+<!-- Intro text section -->
+<section>
+  <h1>Support Our Work</h1>
+  <div class="info">
+    <p><strong>Your gift helps Jewish life flourish.</strong> Every donation is a drop of water for those who have never experienced it, helping roots grow, thrive, and bloom.</p>
+    <p><strong>Seed Bloom Charity</strong> nurtures hidden Jewish identity, giving new life to a community ready to blossom.</p>
+    <p>Thank you for helping Jewish life take root and flourish.</p>
+  </div>
 
 
     <!-- Bloomerang donation widget -->
