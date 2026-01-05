@@ -5,47 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate - Seed Bloom Charity</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
-    nav { background:#4CAF50; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
-    nav a:hover { text-decoration:underline; }
-    section { 
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    line-height: 1.6;
-
-    /* Mobile fix */
-    box-sizing: border-box;
-}
-
-/* Optional: adjust padding for very small screens */
-@media (max-width: 480px) {
-    section {
-        padding: 30px 15px;
+    body { 
+      font-family: Arial, sans-serif; 
+      margin:0; 
+      padding:0; 
+      background:#f9f9f9; 
     }
-}
-/* Center donation form and iframe inside section */
-section iframe,
-section form {
-    width: 100%;       /* Full width */
-    max-width: 500px;  /* Optional: limits how wide it gets on big screens */
-    margin: 20px auto; /* Centers it horizontally and adds spacing from text */
-    display: block;    /* Ensures margin auto works */
-}
 
-    h1 { text-align:center; color:#4CAF50; margin-bottom:20px; }
-    footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
-    .info { margin-bottom:30px; }
+    nav { 
+      background:#4CAF50; 
+      padding:10px 20px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      flex-wrap:wrap; 
+    }
+
+    nav a { 
+      color:white; 
+      margin:0 15px; 
+      text-decoration:none; 
+      font-weight:bold; 
+      font-size:16px; 
+    }
+
+    nav a:hover { 
+      text-decoration:underline; 
+    }
+
+    section { 
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      box-sizing: border-box;
+    }
+
+    /* Mobile padding adjustment */
+    @media (max-width: 480px) {
+      section {
+          padding: 30px 15px;
+      }
+    }
+
+    /* Center donation widget inside section */
+    .donation-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 20px auto;
+    }
+
+    .donation-container iframe,
+    .donation-container form {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+    }
+
+    h1 { 
+      text-align:center; 
+      color:#4CAF50; 
+      margin-bottom:20px; 
+    }
+
+    footer { 
+      text-align:center; 
+      padding:20px; 
+      background:#eee; 
+      margin-top:40px; 
+    }
+
+    .info { 
+      margin-bottom:30px; 
+    }
+
     /* Logo animations */
-    .seed-container { display:inline-block; position:relative; width:20px; height:30px; }
-    .seed { width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:translateX(-50%); animation:grow 2s infinite alternate; }
-    .drop { width:4px; height:4px; background:#2196F3; border-radius:50%; position:absolute; top:-10px; left:50%; transform:translateX(-50%); animation:drop 1s infinite alternate; }
-    @keyframes grow { 0% { height:8px; } 50% { height:20px; } 100% { height:15px; } }
-    @keyframes drop { 0% { top:-10px; opacity:1; } 100% { top:0; opacity:0; } }
+    .seed-container { 
+      display:inline-block; 
+      position:relative; 
+      width:20px; 
+      height:30px; 
+    }
+
+    .seed { 
+      width:8px; 
+      height:8px; 
+      background:#7a5c2e; 
+      border-radius:50%; 
+      position:absolute; 
+      bottom:0; 
+      left:50%; 
+      transform:translateX(-50%); 
+      animation:grow 2s infinite alternate; 
+    }
+
+    .drop { 
+      width:4px; 
+      height:4px; 
+      background:#2196F3; 
+      border-radius:50%; 
+      position:absolute; 
+      top:-10px; 
+      left:50%; 
+      transform:translateX(-50%); 
+      animation:drop 1s infinite alternate; 
+    }
+
+    @keyframes grow { 
+      0% { height:8px; } 
+      50% { height:20px; } 
+      100% { height:15px; } 
+    }
+
+    @keyframes drop { 
+      0% { top:-10px; opacity:1; } 
+      100% { top:0; opacity:0; } 
+    }
   </style>
   <!-- jQuery for Bloomerang -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -53,27 +132,36 @@ section form {
 <body>
 
 <!-- Top navigation with logo -->
-<nav style="background:#4CAF50; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+<nav>
   <div style="display:flex; align-items:center; gap:8px;">
-    <div class="seed-container" style="position:relative; width:20px; height:30px;">
-      <div class="drop" style="width:4px; height:4px; background:#2196F3; border-radius:50%; position:absolute; top:-10px; left:50%; transform:translateX(-50%); animation:drop 1s infinite alternate;"></div>
-      <div class="seed" style="width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:translateX(-50%); animation:grow 2s infinite alternate;"></div>
+    <div class="seed-container">
+      <div class="drop"></div>
+      <div class="seed"></div>
     </div>
     <span style="color:white; font-family:'Brush Script MT', cursive; font-size:24px;">Seed Bloom</span>
     <span style="color:white; font-family:Times New Roman, serif; font-size:16px; text-transform:uppercase; margin-left:4px;">Charity</span>
   </div>
   <div>
-    <a href="index.html" style="color:white; margin-right:15px; text-decoration:none; font-weight:bold;">Home</a>
-    <a href="donate.html" style="color:white; text-decoration:none; font-weight:bold;">Donate</a>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
   </div>
 </nav>
 
-<!-- Info section with updated text -->
+<!-- Info section -->
 <section class="info">
   <p><strong>Your gift helps Jewish life flourish.</strong> Every donation is a drop of water for those who have never experienced it, helping roots grow, thrive, and bloom.</p>
   <p><strong>Seed Bloom Charity</strong> nurtures hidden Jewish identity, giving new life to a community ready to blossom.</p>
   <p>Thank you for helping Jewish life take root and flourish.</p>
+
+  <!-- Bloomerang donation widget -->
+  <div class="donation-container">
+    <!-- Paste your Bloomerang embed code below -->
+    <!-- Example: -->
+    <!-- <iframe src="YOUR_BLOOMERANG_EMBED_URL" frameborder="0" scrolling="no"></iframe> -->
+  </div>
 </section>
+
+
 
 <!-- Bloomerang donation widget starts below -->
 
