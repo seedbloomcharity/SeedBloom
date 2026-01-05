@@ -4,75 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seed Bloom Charity</title>
-
   <style>
     /* Reset & basic styles */
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+    body { margin:0; padding:0; font-family: Arial, sans-serif; background:#f9f9f9; color:#333; }
     nav { background:#4CAF50; padding:15px; text-align:center; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; font-size:16px; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
     nav a:hover { text-decoration:underline; }
 
     /* Header */
-    header { position:relative; text-align:center; color:white; }
-    header img { width:100%; max-height:400px; object-fit:cover; display:block; }
+    header { position:relative; text-align:center; }
+    header img { width:100%; height:auto; object-fit:cover; display:block; }
+    header h1 { 
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); 
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      font-size:36px; color:white; text-shadow:2px 2px 5px rgba(0,0,0,0.6);
+      margin:0;
+    }
 
     /* Seed Bloom logo styling */
-    header h1 {
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      font-size:36px;
-      text-shadow:2px 2px 5px rgba(0,0,0,0.6);
+    .seed-container { display:inline-block; position:relative; width:20px; height:30px; }
+    .seed { width:8px; height:8px; background:#7a5c2e; border-radius:50%; position:absolute; bottom:0; left:50%; transform:translateX(-50%); animation:grow 2s infinite alternate; }
+    .drop { width:4px; height:4px; background:#2196F3; border-radius:50%; position:absolute; top:-10px; left:50%; transform:translateX(-50%); animation:drop 1s infinite alternate; }
+
+    @keyframes grow { 0% { height:8px; } 50% { height:20px; } 100% { height:15px; } }
+    @keyframes drop { 0% { top:-10px; opacity:1; } 100% { top:0; opacity:0; } }
+
+    /* Bloom animation */
+    .bloom-word { 
+      font-family: "Brush Script MT", cursive; 
+      font-size:44px; 
+      color:#2f7d32; 
+      display:inline-block;
+      animation: bloomGrow 3s ease-in-out infinite alternate;
     }
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 8px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-    }
-    .seed {
-      font-family: "Courier New", monospace;
-      font-size: 34px;
-      color: #7a5c2e;
-      letter-spacing: 3px;
-    }
-    .drop {
-      font-size: 26px;
-      margin-bottom: 18px;
-    }
-    .bloom {
-      font-family: "Brush Script MT", cursive;
-      font-size: 44px;
-      color: #2f7d32;
-    }
-    .charity {
-      font-family: "Times New Roman", serif;
-      font-size: 18px;
-      letter-spacing: 2px;
-      margin-left: 6px;
-      text-transform: uppercase;
+    @keyframes bloomGrow {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.05) rotate(1deg); }
+      100% { transform: scale(1) rotate(0deg); }
     }
 
     /* Sections */
-    section { max-width:900px;
+    section { max-width:900px; margin:40px auto; padding:0 20px; }
+    h2 { color:#4CAF50; margin-top:40px; }
+    p { line-height:1.6; }
+    .btn { display:inline-block; padding:12px 25px; background:#4CAF50; color:white; text-decoration:none; border-radius:5px; margin-top:20px; }
 
-    <a href="donate.html" class="button">Support Our Work</a>
-  </section>
+    /* Gallery */
+    .gallery { display:flex; flex-wrap:wrap; gap:15px; margin-top:30px; justify-content:center; }
+    .gallery img { width:100%; max-width:300px; border-radius:8px; object-fit:cover; }
+
+    @media(max-width:600px) {
+      header h1 { font-size:28px; flex-direction:column; gap:5px; }
+      .gallery img { max-width:100%; }
+      nav a { display:block; margin:10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+
+  <header>
+    <img src="images/0O3A8994.jpg" alt="Seed Bloom Charity">
+    <h1>
+      <div class="seed-container">
+        <div class="drop"></div>
+        <div class="seed"></div>
+      </div>
+      Seed <span class="bloom-word">Bloom</span> Charity
+    </h1>
+  </header>
 
   <section>
+    <h2>Who We Are</h2>
+    <p>Seed Bloom Charity is dedicated to supporting Jewish life in Voronezh. We help nurture hidden Jewish roots—especially those buried under generations of silence and erasure—like seeds never watered. We provide warmth, guidance, and nourishment so they can grow, thrive, and proudly blossom. We strive to make a lasting impact through education, cultural programs, and direct support for families and individuals in need.</p>
+
+    <h2>Our Mission</h2>
+    <p>We believe that every act of kindness can grow into something bigger. Our mission is to nurture and strengthen Jewish life by providing resources, opportunities, and a sense of belonging for everyone.</p>
+
+    <a href="donate.html" class="btn">Support Our Work</a>
+
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="images/WhatsApp Image 2024-11-13 at 20.42.41_e46316f3.jpg" alt="Gallery Image 1">
-      <img src="images/gleb2.png" alt="Gallery Image 2">
-      <img src="images/students12.jpg" alt="Gallery Image 3">
+      <img src="images/WhatsApp Image 2024-11-13 at 20.42.41_e46316f3.jpg" alt="Community Photo 1">
+      <img src="images/gleb2.png" alt="Community Photo 2">
+      <img src="images/students12.jpg" alt="Community Photo 3">
     </div>
   </section>
 
-  <footer>
+  <footer style="text-align:center; padding:20px; background:#eee; margin-top:40px;">
     &copy; 2025 Seed Bloom Charity
   </footer>
-
 </body>
 </html>
